@@ -15,9 +15,10 @@ import pandas as pd
 def run():
     # Read in the csv file in question
     test_sql = pd.read_csv('charlotte_top10.csv', encoding='latin-1')
+    temp_dictionary = {'test_sql': test_sql}
 
     # Initiate pysqldf to enable sql-like querying in python
-    pysqldf = lambda q: sqldf(q, globals())
+    pysqldf = lambda q: sqldf(q, temp_dictionary)
 
     # Write your query, counting positive and negative reviews by restaurant
     q  = """

@@ -61,7 +61,6 @@ def run(path, file_name, time_grain):
     # Populate the list
     for i, r in test_check.iterrows():
         for al in aspect_list:
-            print("................")
             if r['review_id'] == al[0]:
                 tot_list.append([r['restaurant_id'],r['review_id'],r['year'],r['month'], r['Sentiment'], al[2] ])
 
